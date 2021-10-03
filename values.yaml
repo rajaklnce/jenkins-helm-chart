@@ -5,10 +5,10 @@
 replicaCount: 2
 namespace : 'default'
 image:
-  repository: jenkins/jenkins
+  repository: rajaklnce/jenkinsapptest
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "lts"
+  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
