@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "jenkins.fullname" . }}-jnlp
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "jenkins.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: 50000
+      targetPort: 50001
+  selector:
+    {{- include "jenkins.selectorLabels" . | nindent 4 }}
