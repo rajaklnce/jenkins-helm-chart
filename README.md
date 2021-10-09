@@ -191,7 +191,10 @@ rajaks@RAJAKS-M-42S5 jenkins-helm-chart %
  after this,  the jenkins will fired in the browser
  
  6. Get the password from the jenkins pods
-  kubectl logs <jenkins pod name>
+ 
+  Get the jenkins pod name  from 'kubectl get pods'
+ 
+  kubectl logs 'jenkins pod name'.
  ```
  Jenkins initial setup is required. An admin user has been created and a password generated.
 Please use the following password to proceed to installation:
@@ -209,6 +212,12 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
  Using ngrok, we can expose our localport to Public Internet. so that we can configure webhook from GITHUB to Jenkins. 
  ngrok http <jenkins tunnel port after the 'minikube service jenkins` command. In our case, tunnel port is 56048.
  Always this terminal need to be open. or run in screen. 
+  
+  ```
+  ngrok http 56048
+  ```
+  Output:
+  -----
   
   ```
  ngrok by @inconshreveable                                                (Ctrl+C to quit)
