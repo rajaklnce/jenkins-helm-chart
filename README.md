@@ -100,6 +100,7 @@ kubeconfig: Configured
 
 #### How to install ngrok
 Ngrok exposes local servers behind NATs and firewalls to the public internet over secure tunnels. [Ngrok Download Documentation](https://ngrok.com/download)
+Using ngrok, we can expose our localport to Public Internet. so that we can configure webhook from GITHUB to Jenkins. 
 
 Ngrok Documentation Process: [Ngrok Steps)[https://ngrok.com/docs]
 
@@ -202,4 +203,26 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
  ```
  7. Use this password (this may change in every deployment) in the jenkins link and proceed further. 
  8. Create a admin user/password at first time. 
+ 
+ 
+ ### Make Tunnel using Ngrok for GITHUB Web hook.
+ Using ngrok, we can expose our localport to Public Internet. so that we can configure webhook from GITHUB to Jenkins. 
+ ngrok http <jenkins tunnel port after the 'minikube service jenkins` command. In our case, tunnel port is 56048.
+  
+  ```
+ ngrok by @inconshreveable                                                (Ctrl+C to quit)
 
+Session Status                online
+Account                       raja.mom@gmail.com (Plan: Free)
+Version                       2.3.40
+Region                        United States (us)
+Web Interface                 http://127.0.0.1:4043
+Forwarding                    http://8cd5-106-51-232-203.ngrok.io -> http://localhost:560
+Forwarding                    https://8cd5-106-51-232-203.ngrok.io -> http://localhost:56
+
+Connections                   ttl     opn     rt1     rt5     p50     p90
+                              0       0       0.00    0.00    0.00    0.00
+  ```
+  Our jenkins is now publicly accessible --> 'https://8cd5-106-51-232-203.ngrok.io'
+  
+  
