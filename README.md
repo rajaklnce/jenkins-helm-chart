@@ -224,7 +224,7 @@ Forwarding                    https://8cd5-106-51-232-203.ngrok.io -> http://loc
 Connections                   ttl     opn     rt1     rt5     p50     p90
                               0       0       0.00    0.00    0.00    0.00
   ```
-  Our jenkins is now publicly accessible --> 'https://8cd5-106-51-232-203.ngrok.io'
+  Our jenkins is now publicly accessible --> 'https://8cd5-106-51-232-203.ngrok.io'.  (This link will change everytime when you trigger ngrok command)
   
 #### Watch the Video for Configuring GITHUB and Jenkins to monitor PR and trigger the jenkins job for Every PR request and post the PR status as a comment. 
   
