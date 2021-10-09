@@ -194,9 +194,19 @@ rajaks@RAJAKS-M-42S5 jenkins-helm-chart %
  
   Get the jenkins pod name  from 'kubectl get pods'
  
+ ```
+rajaks@RAJAKS-M-42S5 jenkins-helm-chart % kubectl get pods
+NAME                       READY   STATUS    RESTARTS   AGE
+jenkins-85b8d84db4-57fkm   1/1     Running   0          4h50m
+rajaks@RAJAKS-M-42S5 jenkins-helm-chart %
+ ```
+ 
   kubectl logs 'jenkins pod name'.
  ```
- Jenkins initial setup is required. An admin user has been created and a password generated.
+ kubectl logs -f jenkins-85b8d84db4-57fkm
+ ```
+ ```
+Jenkins initial setup is required. An admin user has been created and a password generated.
 Please use the following password to proceed to installation:
 
 6af491493bf246c2a210ae1f98c95bd5
