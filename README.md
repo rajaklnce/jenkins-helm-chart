@@ -171,9 +171,9 @@ jenkins-jnlp   ClusterIP   10.101.126.2    <none>        50000/TCP        56s
 kubernetes     ClusterIP   10.96.0.1       <none>        443/TCP          5d22h
 rajaks@RAJAKS-M-42S5 jenkins-helm-chart %
  ```
- 5. We need to create a service tunnel.
+ 5. We need to create a service tunnel. always this terminal need to be open. or run in screen. 
  ```
- rajaks@RAJAKS-M-42S5 jenkins-helm-chart % minikube service jenkins
+ rajaks@RAJAKS-M-42S5 jenkins-helm-chart % minikube service jenkins 
 |-----------|---------|-------------|---------------------------|
 | NAMESPACE |  NAME   | TARGET PORT |            URL            |
 |-----------|---------|-------------|---------------------------|
@@ -205,9 +205,10 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
  8. Create a admin user/password at first time. 
  
  
- ### Make Tunnel using Ngrok for GITHUB Web hook.
+ ### Make Tunnel using Ngrok for GITHUB Web hook. 
  Using ngrok, we can expose our localport to Public Internet. so that we can configure webhook from GITHUB to Jenkins. 
  ngrok http <jenkins tunnel port after the 'minikube service jenkins` command. In our case, tunnel port is 56048.
+ Always this terminal need to be open. or run in screen. 
   
   ```
  ngrok by @inconshreveable                                                (Ctrl+C to quit)
